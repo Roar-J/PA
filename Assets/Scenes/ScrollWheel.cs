@@ -9,7 +9,7 @@ public class ScrollWheel : MonoBehaviour
     public float sensitivity = 20f;
     public GameSetting status;
     public float Jay;
-    public Animator Cat;
+    //public Animator Cat;
     // Update is called once per frame
     void Start()
     {
@@ -25,7 +25,7 @@ public class ScrollWheel : MonoBehaviour
             Camera.main.fieldOfView = fov;
             if (fov == minFov)
             {
-                Cat.SetFloat("Action", 1);
+                //Cat.SetFloat("Action", 1);
                 status.status = 2;
             }
         }
