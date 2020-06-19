@@ -36,13 +36,22 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scenes\Ball\MouseClick.cs" />
-     <Compile Include="Assets\Scenes\GameSetting.cs" />
-     <Compile Include="Assets\Scenes\ScrollWheel.cs" />
-     <Compile Include="Assets\Scenes\clothes\ClothesDraw.cs" />
-     <Compile Include="Assets\Scenes\clothes\Trigger.cs" />
-     <Compile Include="Assets\Scenes\washing machine\Handle\OpenDoor.cs" />
-     <Compile Include="Assets\UnDragable.cs" />
+     <Compile Include="Assets\Scripts\Bubble.cs" />
+     <Compile Include="Assets\Scripts\ClothesDraw.cs" />
+     <Compile Include="Assets\Scripts\CursorControl\Clickable.cs" />
+     <Compile Include="Assets\Scripts\CursorControl\MouseCursorController.cs" />
+     <Compile Include="Assets\Scripts\CursorControl\MouseCursorSetting.cs" />
+     <Compile Include="Assets\Scripts\Draggable.cs" />
+     <Compile Include="Assets\Scripts\Eyes.cs" />
+     <Compile Include="Assets\Scripts\GameSetting.cs" />
+     <Compile Include="Assets\Scripts\MouseClick.cs" />
+     <Compile Include="Assets\Scripts\OpenDoor.cs" />
+     <Compile Include="Assets\Scripts\ScrollWheel.cs" />
+     <Compile Include="Assets\Scripts\SingleTon.cs" />
+     <Compile Include="Assets\Scripts\SoundFx.cs" />
+     <Compile Include="Assets\Scripts\SoundManager.cs" />
+     <Compile Include="Assets\Scripts\Trigger.cs" />
+     <Compile Include="Assets\Scripts\UnDragable.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.0b12/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
