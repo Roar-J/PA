@@ -36,34 +36,35 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Bubble.cs" />
-     <Compile Include="Assets\Scripts\Clickable.cs" />
-     <Compile Include="Assets\Scripts\ClothesDraw.cs" />
-     <Compile Include="Assets\Scripts\CursorControl\MouseCursorController.cs" />
-     <Compile Include="Assets\Scripts\CursorControl\MouseCursorSetting.cs" />
      <Compile Include="Assets\Scripts\CursorController.cs" />
-     <Compile Include="Assets\Scripts\Draggable.cs" />
-     <Compile Include="Assets\Scripts\DraggableManager.cs" />
-     <Compile Include="Assets\Scripts\GameSetting.cs" />
      <Compile Include="Assets\Scripts\Interactable.cs" />
      <Compile Include="Assets\Scripts\InteractableTrigger.cs" />
-     <Compile Include="Assets\Scripts\MouseClick.cs" />
-     <Compile Include="Assets\Scripts\MouseEnterResponse.cs" />
-     <Compile Include="Assets\Scripts\OpenDoor.cs" />
-     <Compile Include="Assets\Scripts\PlayerCamera.cs" />
-     <Compile Include="Assets\Scripts\ScrollWheel.cs" />
+     <Compile Include="Assets\Scripts\OldStage01\Clickable.cs" />
+     <Compile Include="Assets\Scripts\OldStage01\ClothesDraw.cs" />
+     <Compile Include="Assets\Scripts\OldStage01\CursorControl\MouseCursorController.cs" />
+     <Compile Include="Assets\Scripts\OldStage01\CursorControl\MouseCursorSetting.cs" />
+     <Compile Include="Assets\Scripts\OldStage01\Draggable.cs" />
+     <Compile Include="Assets\Scripts\OldStage01\GameSetting.cs" />
+     <Compile Include="Assets\Scripts\OldStage01\MouseClick.cs" />
+     <Compile Include="Assets\Scripts\OldStage01\MouseEnterResponse.cs" />
+     <Compile Include="Assets\Scripts\OldStage01\OpenDoor.cs" />
+     <Compile Include="Assets\Scripts\OldStage01\ScrollWheel.cs" />
+     <Compile Include="Assets\Scripts\OldStage01\Trigger.cs" />
+     <Compile Include="Assets\Scripts\OldStage01\UnDragable.cs" />
      <Compile Include="Assets\Scripts\SingleTon.cs" />
      <Compile Include="Assets\Scripts\SoundFx.cs" />
      <Compile Include="Assets\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Stage01\Ball.cs" />
+     <Compile Include="Assets\Scripts\Stage01\Bubble.cs" />
      <Compile Include="Assets\Scripts\Stage01\Cat.cs" />
      <Compile Include="Assets\Scripts\Stage01\Clothes.cs" />
      <Compile Include="Assets\Scripts\Stage01\DoorHandle.cs" />
      <Compile Include="Assets\Scripts\Stage01\Eyes.cs" />
+     <Compile Include="Assets\Scripts\Stage01\PlayerCamera.cs" />
      <Compile Include="Assets\Scripts\Stage01\Routine.cs" />
      <Compile Include="Assets\Scripts\Stage01\WashingMachine.cs" />
-     <Compile Include="Assets\Scripts\Trigger.cs" />
-     <Compile Include="Assets\Scripts\UnDragable.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\Switch.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\TutorialRoutine.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.0b12/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

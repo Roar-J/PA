@@ -6,6 +6,7 @@ namespace Stage01
 {
     public class Routine : MonoBehaviour
     {
+        public Transform cameraStartRoot;
         public GameObject washingMachineBubble;
         public InteractableTrigger clothesToWashingMachineTrigger;
         public Interactable doorScrollHintTrigger;
@@ -29,6 +30,7 @@ namespace Stage01
             playerCamera.OpenScroll(false);
 
             //state 1
+            yield return playerCamera.LerpTo(cameraStartRoot);
             eyes.PlayAnimation(Eyes.Animation.Sleepy);
             washingMachineBubble.SetActive(true);
             ball.onClickBegin = () => 
