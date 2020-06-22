@@ -4,22 +4,13 @@ using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
-    public List<Texture2D> textures;
+    public float time = 8f;
 
-    GameSetting gameSetting;
-    Material bubbleMaterial;
-
-    void Start()
+    IEnumerator Start()
     {
-        gameSetting = FindObjectOfType<GameSetting>();
-        bubbleMaterial = GetComponent<MeshRenderer>().material;
+        yield return new WaitForSeconds(time);
+        gameObject.SetActive(false);
     }
 
-    void Update()
-    {
-        int status = Mathf.Clamp(gameSetting.status, 0, textures.Count-1);
-        Texture2D currentTexture = textures[status];
-
-        bubbleMaterial.SetTexture("_MainTex", currentTexture);
-    }
+    
 }

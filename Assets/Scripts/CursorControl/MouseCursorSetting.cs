@@ -7,6 +7,10 @@ public class MouseCursorSetting : ScriptableObject
 {
     public static MouseCursorSetting current { get => Resources.Load<MouseCursorSetting>("MouseCursorSetting"); }
 
+    public Vector2 offset = Vector2.zero;
+    public List<Texture2D> cursors;
+    
+    [Header("Old")]
     public Texture2D click1;
     public Texture2D click2;
     public Texture2D drag1;
