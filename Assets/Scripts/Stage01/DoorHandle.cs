@@ -16,15 +16,15 @@ namespace Stage01
         void Start()
         {
             var doorHandle = this;
-            doorHandle.onClickBegin = () => doorHandle.startMousePos = Input.mousePosition;
-            doorHandle.onClickEnd = () => 
+            doorHandle.onClickBegin.SetListener(() => doorHandle.startMousePos = Input.mousePosition);
+            doorHandle.onClickEnd.SetListener(() => 
             {
                 float distance = doorHandle.startMousePos.x - Input.mousePosition.x;
                 if (distance >= doorHandle.distanceForOpen)
                     Open();
                 else if (distance <= distanceForOpen)
                     Close();
-            };
+            });
         }
 
         public void Open()

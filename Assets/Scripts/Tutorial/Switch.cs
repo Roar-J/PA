@@ -12,7 +12,7 @@ namespace Toturial
         void Start()
         {
             type = Interactable.Type.Click;
-            onClickBegin = Open;
+            onClickBegin.SetListener(Open);
         }
 
         public void Open()

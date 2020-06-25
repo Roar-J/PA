@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using System;
 
 public class Interactable : MonoBehaviour
@@ -9,12 +10,12 @@ public class Interactable : MonoBehaviour
 
     public Type type;
     public bool isClicked;
-    public Action onDragBegin = () => {};
-    public Action onDragEnd = () => {};
-    public Action onMouseEnter = () => { };
-    public Action onMouseExit = () => { };
-    public Action onClickBegin = () => { };
-    public Action onClickEnd = () => { };
+    public UnityEvent onDragBegin;
+    public UnityEvent onDragEnd;
+    public UnityEvent onMouseEnter;
+    public UnityEvent onMouseExit;
+    public UnityEvent onClickBegin;
+    public UnityEvent onClickEnd;
 
     float startDistance;
 
@@ -73,5 +74,14 @@ public class Interactable : MonoBehaviour
     void OnMouseExit()
     {
         onMouseExit.Invoke();
+    }
+}
+
+public static class InteractableExtension
+{
+    public static void SetListener(this UnityEvent e , UnityAction a)
+    {
+        e.RemoveAllListeners();
+        e.AddListener(a);
     }
 }

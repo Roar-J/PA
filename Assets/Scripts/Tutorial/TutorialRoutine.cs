@@ -9,7 +9,10 @@ namespace Toturial
         public Transform cameraStartRoot;
         public Interactable toSwitchTrigger;
         public Transform cameraRootNextToSwitch;
+        public GameObject eyeBeforeSwitchOn;
         public GameObject roomLights;
+        public Transform cameraRootAfterSwitchOn;
+        public GameObject eyeAfterSwitchOn;
         public GameObject stage01Routine;
 
         IEnumerator Start()
@@ -21,7 +24,7 @@ namespace Toturial
 
             bool moving = false;
             toSwitchTrigger.gameObject.SetActive(true);
-            toSwitchTrigger.onClickBegin = () => moving = true;
+            toSwitchTrigger.onClickBegin.SetListener(() => moving = true);
             yield return new WaitUntil ( () => moving);
             toSwitchTrigger.gameObject.SetActive(false);
             yield return playerCamera.LerpTo(cameraRootNextToSwitch, 2f);
@@ -29,8 +32,10 @@ namespace Toturial
             theSwitch.enabled = true;
             yield return new WaitUntil(() => theSwitch.isOpened);
             theSwitch.enabled = false;
-
+            eyeAfterSwitchOn.SetActive(true);
             roomLights.SetActive(true);
+            yield return playerCamera.LerpTo(cameraRootAfterSwitchOn, 2f);
+
             stage01Routine.SetActive(true);
         }
     }

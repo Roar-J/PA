@@ -33,19 +33,19 @@ namespace Stage01
             yield return playerCamera.LerpTo(cameraStartRoot);
             eyes.PlayAnimation(Eyes.Animation.Sleepy);
             washingMachineBubble.SetActive(true);
-            ball.onClickBegin = () => 
+            ball.onClickBegin.SetListener(() => 
             {
                 ball.Jump();
                 CursorController.current.SetCursor(CursorType.None);
-            };
-            ball.onMouseEnter = () => CursorController.current.SetCursor(CursorType.Click1);
-            ball.onMouseExit = () => CursorController.current.SetCursor(CursorType.None);
+            });
+            ball.onMouseEnter.SetListener(() => CursorController.current.SetCursor(CursorType.Click1));
+            ball.onMouseExit.SetListener(() => CursorController.current.SetCursor(CursorType.None));
             clothes.startPosition = clothes.transform.position;
-            clothes.onMouseEnter = () => CursorController.current.SetCursor(CursorType.Click1);
-            clothes.onMouseExit = () => {
+            clothes.onMouseEnter.SetListener(() => CursorController.current.SetCursor(CursorType.Click1));
+            clothes.onMouseExit.SetListener(() => {
                 CursorController.current.SetCursor(CursorType.None);
-            };
-            clothes.onDragEnd = () => clothes.transform.position = clothes.startPosition;
+            });
+            clothes.onDragEnd.SetListener(() => clothes.transform.position = clothes.startPosition);
             doorHandle.enabled = true;
 
             //Open the Door
@@ -55,9 +55,9 @@ namespace Stage01
 
             //state 2
             eyes.PlayAnimation(Eyes.Animation.SlightlyOpened);
-            ball.onClickBegin += () => eyes.PlayAnimation(Eyes.Animation.Refreshed, 1f);
-            clothes.onDragBegin += () => clothesToWashingMachineTrigger.gameObject.SetActive(true);
-            clothes.onDragEnd = () =>
+            ball.onClickBegin.AddListener(() => eyes.PlayAnimation(Eyes.Animation.Refreshed, 1f));
+            clothes.onDragBegin.AddListener(() => clothesToWashingMachineTrigger.gameObject.SetActive(true));
+            clothes.onDragEnd.SetListener(() =>
             {
                 if (clothesToWashingMachineTrigger.touchingObject == clothes)
                 {
@@ -69,10 +69,10 @@ namespace Stage01
                     clothes.transform.position = clothes.startPosition;
                 }
                 clothesToWashingMachineTrigger.gameObject.SetActive(false);
-            };
+            });
             doorScrollHintTrigger.gameObject.SetActive(true);
-            doorScrollHintTrigger.onMouseEnter = () => CursorController.current.SetCursor(CursorType.Scroll);
-            doorScrollHintTrigger.onMouseExit = () => CursorController.current.SetCursor(CursorType.None);
+            doorScrollHintTrigger.onMouseEnter.SetListener(() => CursorController.current.SetCursor(CursorType.Scroll));
+            doorScrollHintTrigger.onMouseExit.SetListener(() => CursorController.current.SetCursor(CursorType.None));
             playerCamera.OpenScroll(true);
 
             //Spot the Cat
@@ -86,7 +86,7 @@ namespace Stage01
             yield return playerCamera.FOVBackToOriginRoutine();
 
             //state 3
-            ball.onClickBegin = ball.Roll;
+            ball.onClickBegin.SetListener(ball.Roll);
             whatDoesCatLikeBubble.SetActive(true);
 
             //Click the ball
@@ -98,7 +98,7 @@ namespace Stage01
             catSeeBallTrigger.gameObject.SetActive(false);
             cat.JumpOut();
             clothesToWashingMachineTrigger.gameObject.SetActive(true);
-            clothes.onDragEnd = () => 
+            clothes.onDragEnd.SetListener(() => 
             {
                 if (clothesToWashingMachineTrigger.touchingObject == clothes)
                 {
@@ -109,7 +109,7 @@ namespace Stage01
                     clothes.transform.position = clothes.startPosition;
                 }
                 clothesToWashingMachineTrigger.gameObject.SetActive(false);
-            };
+            });
             
             //Put in the clothes
             yield return new WaitUntil ( () => clothes.isInWashingMachine );
